@@ -1,8 +1,12 @@
 const express = require ("express");
 
+const cors=require ("cors")
+
 const data = require("./services/data")
 
 const app=express()
+
+app.use(cors({origin:'http://localhost:4200'}))
 
 app.use(express.json())
 
@@ -18,6 +22,6 @@ app.post("/login",(req,res)=>{
     })
 })
 
-app.listen(3001,()=>{
-    console.log("server started 3001");
+app.listen(3000,()=>{
+    console.log("server started 3000");
 })
